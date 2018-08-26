@@ -1,0 +1,56 @@
+﻿@model IEnumerable<UserModels.UserDetails>
+
+@{
+    ViewBag.Title = "GetUsers";
+}
+
+<h2>GetUsers</h2>
+@Html.ActionLink("Add New","Add")
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Forename
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Date of Birth
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Home Number
+            </th>
+            <th>
+                Work Number
+            </th>
+            <th>
+                Mobile Number
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Forename</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Date_of_Birth</td>
+                    <td>@item.Gender</td>
+                    <td>@item.Home_Number</td>
+                    <td>@item.Work_Number</td>
+                    <td>@item.Mobile_Number</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
